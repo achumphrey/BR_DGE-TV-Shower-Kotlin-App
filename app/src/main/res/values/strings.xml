@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BR-DGE TV Shower Kotlin App</string>
+    <string name="num_of_days">Number of days since premier:</string>
+    <string name="name">Name</string>
+    <string name="search">Search</string>
+    <string name="original_image">Original Image</string>
+    <string name="no_name">Sorry! You must enter a Show name\nto perform a search!</string>
+    <string name="no_network">Sorry! No network connection!</string>
+</resources>
