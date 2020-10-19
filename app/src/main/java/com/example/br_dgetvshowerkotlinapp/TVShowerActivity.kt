@@ -97,6 +97,7 @@ class TVShowerActivity : AppCompatActivity() {
 
         Picasso.get()
             .load(data?.image?.original)
+            .resize(400,700)
             .error(R.drawable.ic_launcher_background)
             .into(imagView)
 
