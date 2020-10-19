@@ -33,7 +33,6 @@ class TVShowerActivity : AppCompatActivity() {
     private val MyPreference = "myPref"
     private lateinit var repo: TVRepository
     private lateinit var webServices: TVWebservice
-    private lateinit var webClient: TVClient
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,8 +42,7 @@ class TVShowerActivity : AppCompatActivity() {
         edName.requestFocus()
 
         sharedPref = getSharedPreferences(MyPreference, Context.MODE_PRIVATE)
-        webClient = TVClient()
-        webServices = webClient.retrofitInstance.create(TVWebservice::class.java)
+        webServices = TVClient().retrofitInstance
         repo = TVRepoImpl(webServices)
 
         showViewModel = ViewModelProvider(
