@@ -134,11 +134,13 @@ class TVShowerActivity : AppCompatActivity() {
     private fun calculateNumOfDays(date: String) : String{
         val pattern = "yyyy-MM-dd"
         val sdf: DateFormat = SimpleDateFormat(pattern, Locale.UK)
-        val startDateValue: Date? = sdf.parse(date)
 
         val z: ZoneId = ZoneId.of("Europe/London")
         val today: LocalDate = LocalDate.now(z)
         val currentDateValue: Date? = sdf.parse("$today")
+
+        val startDateValue: Date? = date.let { sdf.parse(date)} ?: currentDateValue
+
         val diff: Long = currentDateValue!!.time - (startDateValue!!.time)
         val numDays = TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS)
 
